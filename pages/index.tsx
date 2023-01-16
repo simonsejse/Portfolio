@@ -1,17 +1,33 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import React, { useCallback }from 'react'
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>Portfolio</h1>
-    </div>
-  )
+
+import Particles from "react-particles";
+import type { Engine } from "tsparticles-engine";
+import { loadFull } from "tsparticles";
+import particlesOptions from "../particles.json";
+import { ISourceOptions } from "tsparticles-engine";
+
+
+function HomePage  (){
+    // this customizes the component tsParticles installation
+   const particlesInit = useCallback(async (engine: Engine) => {
+        await loadFull(engine);
+    }, []);
+
+    const options = {
+      /* custom options */
+    };
+    return 
+        <div>
+            <Particles options={particlesOptions as ISourceOptions} init={particlesInit}/>
+            <div>
+                <h1>
+                    Hello
+                </h1>
+            </div>
+        </div>  
+
 }
 
-export default Home
+export default HomePage
+
