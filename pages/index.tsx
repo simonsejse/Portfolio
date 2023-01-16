@@ -17,17 +17,17 @@ function HomePage  (){
     const options = {
       /* custom options */
     };
-    return 
-        <div>
-            <Particles options={particlesOptions as ISourceOptions} init={particlesInit}/>
-            <div>
-                <h1>
-                    Hello
-                </h1>
-            </div>
-        </div>  
-
+    return (
+            <>
+                <main className="flex">
+                    <SectionOne/>>
+                </main>
+            </>
+    )
 }
+
+const SectionOne = 
+
 
 export default HomePage
 
